@@ -9,6 +9,8 @@ enablePrometheus: false
 enableCertManager: false
 # Enable API Priority and Fairness configuration for the visibility API
 enableVisibilityAPF: false
+# Enable visibility server auth RoleBinding in kube-system (disable if pre-installed externally, e.g. ArgoCD namespace mode)
+enableVisibilityServerAuth: true
 # Customize controllerManager
 controllerManager:
   #featureGates:
