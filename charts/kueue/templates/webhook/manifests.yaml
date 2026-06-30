@@ -157,6 +157,9 @@ webhooks:
         path: /mutate-batch-v1-job
     failurePolicy: Fail
     name: mjob.kb.io
+    objectSelector:
+      matchLabels:
+        app.kubernetes.io/managed-by: kueue
     namespaceSelector:
       {{- if (hasKey $managerConfig "managedJobsNamespaceSelector") }}
         {{- toYaml $managerConfig.managedJobsNamespaceSelector | nindent 6 }}
@@ -822,6 +825,9 @@ webhooks:
         path: /validate-batch-v1-job
     failurePolicy: Fail
     name: vjob.kb.io
+    objectSelector:
+      matchLabels:
+        app.kubernetes.io/managed-by: kueue
     namespaceSelector:
       {{- if (hasKey $managerConfig "managedJobsNamespaceSelector") }}
         {{- toYaml $managerConfig.managedJobsNamespaceSelector | nindent 6 }}

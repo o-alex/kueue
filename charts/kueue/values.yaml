@@ -19,6 +19,8 @@ certManager:
   #   group: cert-manager.io
 # -- Enable API Priority and Fairness configuration for the visibility API
 enableVisibilityAPF: false
+# -- Enable visibility server auth RoleBinding in kube-system (disable if pre-installed externally, e.g. ArgoCD namespace mode)
+enableVisibilityServerAuth: true
 # -- Enable KueueViz dashboard
 enableKueueViz: false
 # -- Kubernetes cluster's domain
